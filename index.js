@@ -16,7 +16,7 @@ const TodoItemRoute = require("./routes/routeItems");
 app.use("/", TodoItemRoute);
 
 mongoose
-  .connect(process.env.DB_CONNECT)
+  .connect(process.env.DB_URI)
   .then(() => {
     console.log("Database connected");
     app.listen(PORT, () => console.log("Server connected"));
