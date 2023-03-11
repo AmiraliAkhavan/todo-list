@@ -11,9 +11,12 @@ function App() {
   const addItem = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.post("http://localhost:5500/api/item", {
-        item: listItem,
-      });
+      const result = await axios.post(
+        "https://todolist-8nt2.onrender.com/api/item",
+        {
+          item: listItem,
+        }
+      );
       setListItems((prev) => [...prev, result.data]);
       setlistItem("");
     } catch (err) {
