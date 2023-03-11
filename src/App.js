@@ -27,7 +27,9 @@ function App() {
   useEffect(() => {
     const getItemsList = async () => {
       try {
-        const result = await axios.get("http://localhost:5500/api/items");
+        const result = await axios.get(
+          "https://todolist-8nt2.onrender.com/api/items"
+        );
         setListItems(result.data);
       } catch (err) {
         console.log(err);
@@ -38,7 +40,9 @@ function App() {
 
   const deleteItem = async (id) => {
     try {
-      const result = await axios.delete(`http://localhost:5500/api/item/${id}`);
+      const result = await axios.delete(
+        `https://todolist-8nt2.onrender.com/api/item/${id}`
+      );
       const newListItems = listItems.filter((item) => item._id !== id);
       setListItems(newListItems);
     } catch (err) {
@@ -50,7 +54,7 @@ function App() {
     e.preventDefault();
     try {
       const result = await axios.put(
-        `http://localhost:5500/api/item/${Updaying}`,
+        `https://todolist-8nt2.onrender.com/api/item/${Updaying}`,
         { item: updateItemText }
       );
       const updatedItemIndex = listItems.findIndex(
