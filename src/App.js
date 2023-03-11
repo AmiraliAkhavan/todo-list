@@ -12,7 +12,7 @@ function App() {
     e.preventDefault();
     try {
       const result = await axios.post(
-        "https://todolist-8nt2.onrender.com/api/item",
+        "https://todolist-8nt2.onrender.com/api/items",
         {
           item: listItem,
         }
