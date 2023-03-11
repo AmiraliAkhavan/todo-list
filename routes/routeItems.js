@@ -22,7 +22,7 @@ router.get("/api/items", async (req, res) => {
   }
 });
 
-router.put("/api/item/:id", async (req, res) => {
+router.put("/api/items/:id", async (req, res) => {
   try {
     const updateItem = await todoItemsModel.findByIdAndUpdate(req.params.id, {
       $set: req.body,
@@ -33,7 +33,7 @@ router.put("/api/item/:id", async (req, res) => {
   }
 });
 
-router.delete("/api/item/:id", async (req, res) => {
+router.delete("/api/items/:id", async (req, res) => {
   try {
     const deleteItem = await todoItemsModel.findByIdAndDelete(req.params.id);
     res.status(200).json("Item Deleted");
